@@ -1,0 +1,44 @@
+#include "ATM_airdrop\dialog.hpp"
+#include "VVS\menu.h"
+
+author = "ShadyPkg";
+OnLoadName = "Arrakis Insurgency";
+onLoadMission = "Takistan has collapsed after a prolonged and effective terror campaign waged by foreign Islamic extremists. It's your job to restore law, order, and the flow of spice..";
+loadScreen = "pics\sandscape.jpg";
+
+onLoadMissionTime = 1;
+onLoadIntroTime = 1;
+
+respawn = 3;
+respawnDelay = 10;
+respawnOnStart = -1;
+respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+
+class CfgSounds {
+	sounds[] = {Vent, Vent2, Para};
+
+	class Vent {name = "Vent"; sound[] = {ATM_airdrop\data\Vent.ogg, db-11, 1.0}; titles[] = {"Woooooooooooooooooooooshhhhhhh"}; };
+	class Vent2 {name = "Vent2"; sound[] = {ATM_airdrop\data\Vent2.ogg, db-11, 1.0}; titles[] = {"*Wooooooshy flutter noises*"}; };
+	class Para {name = "Para"; sound[] = {ATM_airdrop\data\parachute.ogg, db-11, 1.0}; titles[] = {"*parachute deployment sounds*"}; };
+};
+
+class CfgFunctions {
+	#include "VVS\Functions.h"
+};
+
+class Header {
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 20;
+}
+
+disabledAI = 1;
+aiKills = 1;
+briefing = 1;
+debriefing = 1;
+
+disableChannels[] = {0};
+enableDebugConsole = 1;
+corpseManagerMode = 0;
+forceRotorLibSimulation = 1;
+saving = 0;
